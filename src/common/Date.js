@@ -22,7 +22,7 @@ export function Date(){
     let userDateTo = document.getElementById("date-to").value;
     let ToDate = new Date();
     const btn = document.getElementById('reservation');
-    console.log(userDateFrom, userDateTo)
+    //console.log(userDateFrom, userDateTo)
     btn.addEventListener('click', function handleClick() {
         if (new Date(userDateFrom).getTime() <= ToDate.getTime()) {
             alert("Data od musi być większa lub równa dzisiejszej");

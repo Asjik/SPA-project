@@ -12,16 +12,16 @@ export function Login(){
 
     divLog.innerHTML=`
     <div class="login form">
-        <header>Login</header>
+        <header>Zaloguj się</header>
         <form action="#">
-            <input type="text" placeholder="Enter your email">
-            <input type="password" placeholder="Enter your password">
-            <a href="#">Forgot password?</a>
-            <input type="button" class="button" value="Login">
+            <input type="text" placeholder="Podaj swój adres e-mail">
+            <input type="password" placeholder="Podaj hasło">
+            <a href="#">Zapomniałeś hasła?</a>
+            <input type="button" class="button" value="Zaloguj się">
         </form>
         <div class="signup">
-            <span class="signup">Don't have an account?
-                <label for="check">Signup</label>
+            <span class="signup">Nie masz konta?
+                <label for="check">Zarejestruj się</label>
             </span>
         </div>
     </div>
@@ -31,15 +31,15 @@ export function Login(){
     const divReg = document.createElement('div');
     divReg.setAttribute('class', 'registration form')
     divReg.innerHTML=`
-    <header>Signup</header>
+    <header>Zarejestruj się</header>
         <form action="#">
-            <input type="text" placeholder="Enter your email">
-            <input type="password" placeholder="Create a password">
-            <input type="password" placeholder="Confirm your password">
-            <input type="button" class="button" value="Signup">
+            <input type="text" placeholder="Podaj swój adres e-mail">
+            <input type="password" placeholder="Podaj hasło">
+            <input type="password" placeholder="Wpisz ponownie hasło">
+            <input type="button" class="button" value="Zarejestruj się">
         </form>
         <div class="signup">
-            <span class="signup">Already have an account?
+            <span class="signup">Masz już konto?
                 <label for="check">Login</label>
             </span>
         </div>

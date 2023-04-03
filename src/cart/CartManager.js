@@ -17,7 +17,7 @@ export const cartManager = {
 
     if (cart === null) {
       content = {
-        [item.name]: { price: item.price, quantity: 1, photo: item.photo }
+        [item.name]: {id: item.id, price: item.price, quantity: 1, photo: item.photo }
       };
     }
     else {
@@ -28,7 +28,7 @@ export const cartManager = {
       }
       else {
         const newItem = {
-          [item.name]: { price: item.price, quantity: 1, photo: item.photo }
+          [item.name]: {id: item.id, price: item.price, quantity: 1, photo: item.photo }
         };
 
         Object.assign(content, newItem);
@@ -69,8 +69,9 @@ export const cartManager = {
       // [['Pokój unarny', { price: 170, quantity: 1 }], ['Pokój binarny, { price: 140, quantity: 3 }], itd.]
       return Object.entries(content).map(entry => {
         const [name, value] = entry;
-        const { price, quantity, photo } = value;
+        const { id, price, quantity, photo } = value;
         return {
+          id,
           name, // rownowazne z --> name: name,
           price,
           quantity,

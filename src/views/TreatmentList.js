@@ -10,15 +10,15 @@ export function TreatmentList() {
 
   const section = document.createElement('section');
   section.setAttribute("class","page-section")
-  section.setAttribute("id","rooms")
+  section.setAttribute("id","treatments")
   const div = document.createElement('div');
   div.setAttribute("class","container");
 
   div.innerHTML = `
   <div class="text-center">
-  <h2 class="section-heading text-uppercase">Zabiegi Spa</h2>
-  <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-  <p class="loading">Ładowanie zabiegów...</p>
+    <h2 class="section-heading text-uppercase">Zabiegi Spa</h2>
+    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <p class="loading">Ładowanie zabiegów...</p>
 </div>
   `;
 
@@ -58,9 +58,10 @@ export function TreatmentList() {
       ul.append(...lis);
       div.append(ul);
       div.querySelector('.loading').remove();
+      section.append(div);
     });
 
 
-  return div;
+  return section;
 
 }

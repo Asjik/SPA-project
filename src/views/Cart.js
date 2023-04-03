@@ -45,7 +45,13 @@
 
     return li;
     });
+    
+    if (items.length === 0){
+        divCard.innerHTML=`
+        <p class="emptySection">Twój koszyk jest pusty</p>
+        `
 
+    }
     cartWrap.append(...items);
     divCard.append(cartWrap);
 

@@ -9,95 +9,32 @@ import { Login } from '../views/Login';
 import {Logo} from '../common/Logo';
 import { NavElement } from '../common/NavElement';
 
-const navItems = [
-    { name: 'Home', component: Home },
-    { name: 'Rooms', component: RoomList },
-    { name: 'Treatments', component: TreatmentList },
-    { name: 'Cart', component: Cart },
-    { name: 'Login', component: Login }
+export const navItems = [
+    { name: 'Strona główna', component: Home },
+    { name: 'Apartamenty', component: RoomList },
+    { name: 'Zabiegi', component: TreatmentList },
+    { name: 'Koszyk', component: Cart },
+    { name: 'Logowanie', component: Login }
 ];
 
-// /// BEZ BOOTSTRAP
-// export function Nav() {
-//     const nav = document.createElement('nav');
-//     nav.setAttribute("class","nav");
-//     const mediaButton = document.createElement('div');
-//     mediaButton.setAttribute("class","media_button");
-//     const button = document.createElement('button');
-//     button.setAttribute("class","main_media_button");
-//     button.setAttribute("id","mediaButton");
-
-//     mediaButton.append(button);
-//     const navElements = (NavElement(navItems));
-//     nav.append(Logo());
-//     nav.append(navElements); /// elementy nav jako lista ul>li
-//     nav.append(mediaButton);
-
-//     let mainListDiv = document.getElementById("mainListDiv");
-//     let respButton = document.getElementById("mediaButton");
-//     console.log(mainListDiv)
-//     console.log(respButton)
-// //     media.onclick = function () {
-    
-// //     "use strict";
-    
-// //     mainListDiv.classList.toggle("show_list");
-// //     mediaButton.classList.toggle("active");
-    
-// // };
-
-    
-
-//     return nav;
-// }
-
-/// Z UŻYCIEM BOOTSTRAP
 export function Nav() {
     const nav = document.createElement('nav');
-    nav.setAttribute("class", "navbar navbar-expand-lg navbar-dark fixed-top"); //bootstrap class
+    nav.setAttribute("class", "navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink"); 
     nav.setAttribute("id", "mainNav");
-    const container = document.createElement('div');
-    container.setAttribute("class", "container");
-    // const navButtons = navItems.map(item => {
-    //     return NavButton(item.name, item.component);
-    // });
-
-
     const navElements = (NavElement(navItems));
- /// mobilny hamburger bootstrap
-    const button = document.createElement('button');
-    button.setAttribute('class','navbar-toggler');
-    button.setAttribute('type','button');
-    button.setAttribute('data-bs-toggle','collapse');
-    button.setAttribute('data-bs-target','navbarResponsive');
-    button.setAttribute('aria-controls','navbarResponsive');
-    button.setAttribute('aria-expanded','false');
-    button.setAttribute('aria-label','Toggle navigation');
-    button.innerHTML=`
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-        `;
-    
-    
-    // const icon = document.createElement('span');
-    // icon.setAttribute('class','navbar-toggler-icon')
-    // button.append(icon)
-
-    const logo = document.createElement('a');
-    logo.classList.add('navbar-brand');
-    logo.setAttribute('href','#')
-    logo.innerHTML = `
-        <img src="https://www.svgrepo.com/show/96187/diskette.svg" alt="logo" />
+    nav.innerHTML=`
+            <div class="container">
+                <a class="navbar-brand" href="#"><i class="fas fa-spa"></i></a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <svg class="svg-inline--fa fa-bars ms-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg><!-- <i class="fas fa-bars ms-1"></i> Font Awesome fontawesome.com -->
+                </button>
+            </div>
     `;
-
-    //nav.append(logo);
-   
-    nav.append(button);
-    nav.append(navElements); /// elementy nav jako lista ul>li
-    
-    //nav.append(...navButtons) // elementy nav jako przyciski
- 
-   
-
+    const divContainer = nav.querySelector(".container");
+    console.log('container nav', divContainer)
+    divContainer.appendChild(navElements);
     return nav;
 }
+
+
