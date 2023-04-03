@@ -281,10 +281,11 @@ header.masthead .masthead-heading {
 #single-room{
   display: flex;
   flex-wrap: nowrap;
+  max-width: 80%;
 }
 
 .room-text{
-  background-color: #f9ffaa;
+  background-color: #DFF1ED;
   padding-left: 15px;
   flex: 50%;
 }
@@ -296,6 +297,74 @@ header.masthead .masthead-heading {
 .room-photo img{
   max-width: 100%;
   max-height:100%;
+}
+
+.facilities__list{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  list-style-type: none;
+}
+
+.facilities__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 33.33333%;
+  margin-bottom: 30px;
+  padding-right: 20px;
+  padding-left: 43px;
+}
+
+.facilities__icon {
+  font-size: 19px;
+  position: absolute;
+  left: 0;
+  color: #51907a;
+}
+
+.facilities__text {
+  margin-left: 10px;
+}
+
+.room__reservation{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 80%;
+  margin: 20px 0;
+  
+}
+
+.room__reservation p{
+  margin: auto;
+
+  padding: 6px 12px;
+  
+}
+.room__reservation btn{
+  margin-right: 15px;
+}
+
+.details__bottom__policy{
+  display: flex;
+}
+
+.details__bottom__policy h6 {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-right: 20px;
+
+}
+.details__bottom__policy:not(:first-child) {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1199px){}
+.facilities__item {
+    width: 50%;
 }
 
 
@@ -377,7 +446,7 @@ header.masthead .masthead-heading {
 .card {
   display: flex;
   background: #fff;
-  max-width: 700px;
+  max-width: 80%;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -414,7 +483,7 @@ h3 {
   //font-family: 'PT Serif', serif;
   font-weight: bold;
   font-size: 2.5em;
-  margin: 0 0 1em;
+  margin: 0 0 .75em;
 }
 
 
@@ -475,10 +544,7 @@ h3 {
     }
     .cartSection {
       display: table-cell;
- 
       vertical-align: middle;
-      
-      
       .itemNumber {
         font-size: .75em;
         color: #777;

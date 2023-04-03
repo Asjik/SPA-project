@@ -65,12 +65,15 @@ window.addEventListener('DOMContentLoaded', event => {
         console.log(fromDate.getTime(), toDate.getTime(), actualDate.getTime())
         if (fromDate.getTime() <= actualDate.getTime()) {
             alert("Data OD jest mniejsza lub rowna od dzisiejszej");
+            return false;
         }
         else if (toDate.getTime() <= actualDate.getTime()) {
             alert("Data DO jest mniejsza lub rowna od dzisiejszej");
+            return false;
         }
         else if  (fromDate.getTime() > toDate.getTime()) {
             alert("Data DO jest wieksza niz OD");
+            return false;
         }
         else return true;
     });
