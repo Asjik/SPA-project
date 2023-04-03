@@ -342,8 +342,9 @@ header.masthead .masthead-heading {
   padding: 6px 12px;
   
 }
-.room__reservation btn{
+.room__reservation .btn{
   margin-right: 15px;
+  border: 2px solid black;
 }
 
 .details__bottom__policy{
@@ -446,7 +447,7 @@ header.masthead .masthead-heading {
 .card {
   display: flex;
   background: #fff;
-  max-width: 80%;
+  max-width: 70%;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -479,11 +480,24 @@ header.masthead .masthead-heading {
   padding: 3em 4em 2em;
   flex: 2;
 }
+
+
 h3 {
   //font-family: 'PT Serif', serif;
   font-weight: bold;
   font-size: 2.5em;
   margin: 0 0 .75em;
+}
+
+.card-content p{
+  font-size: 1.25em;
+}
+
+.card-content .btn{
+  position: absolute;
+  right: 100px;
+  bottom: 85px;
+  border: 2px solid black;
 }
 
 
@@ -497,6 +511,9 @@ h3 {
   .card { flex-direction: column; } 
   .card .card-pic-wrap { min-height: 200px; }
 }
+
+
+
 ///FOOTER
 .footer {
   text-align: center;

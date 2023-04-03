@@ -1,5 +1,6 @@
 // TreatmentDetails.js
-
+import { Button } from '../common/Button';
+import { cartManager } from '../cart/cartManager';
 export function TreatmentDetails(treatmentId) {
   
   const div = document.createElement('div');
@@ -18,11 +19,11 @@ export function TreatmentDetails(treatmentId) {
       <div class="card-content">
         <h3>${treatment.name}</h3>
         <p>Czas trwania zabiegu: ${treatment.time} min</p>
-        <p>Cena: ${treatment.price} PLN</p>
+        <p>Cena: od <strong>${treatment.price} PLN</strong></p>
       </div>
       `;
-      
-      //div.querySelector('.loading').remove();
+      const addToCartButton = Button('Dodaj do koszyka', () => cartManager.addItem(treatment), 'btn btn-light');
+      div.querySelector('.card-content').append(addToCartButton);
     });
 
 
