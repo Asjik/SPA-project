@@ -48,6 +48,7 @@
     
     if (items.length === 0){
         divCard.innerHTML=`
+        <i class="basket-icon fas fa-shopping-basket" aria-hidden="true"></i>
         <p class="emptySection">Twój koszyk jest pusty</p>
         `
 
