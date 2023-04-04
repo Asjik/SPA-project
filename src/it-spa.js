@@ -10,6 +10,9 @@ import { Header } from './common/Header';
 import { Footer } from './common/Footer';
 import { RoomList } from './views/RoomList';
 
+
+
+
 const main = document.querySelector('main');
 
 
@@ -89,7 +92,6 @@ document.body.addEventListener('navigate', event => {
     main.innerHTML = '';
     main.append(Component());
 });
-
 
 
 // window.addEventListener('DOMContentLoaded', event => {

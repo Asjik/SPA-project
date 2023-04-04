@@ -32,7 +32,6 @@ export function Banner() {
     setTimeout(showSlides, 3000); // Change image every 2 seconds
     }
     
-    //console.log(Date())
     section.append(div)
     section.append(Date())
 return section;

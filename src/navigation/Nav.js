@@ -6,7 +6,6 @@ import { RoomList } from '../views/RoomList';
 import { TreatmentList } from '../views/TreatmentList';
 import { Cart } from '../views/Cart';
 import { Login } from '../views/Login';
-import {Logo} from '../common/Logo';
 import { NavElement } from '../common/NavElement';
 
 export const navItems = [
@@ -32,7 +31,7 @@ export function Nav() {
             </div>
     `;
     const divContainer = nav.querySelector(".container");
-    console.log('container nav', divContainer)
+    //console.log('container nav', divContainer)
     divContainer.appendChild(navElements);
     return nav;
 }
