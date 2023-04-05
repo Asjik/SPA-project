@@ -1,5 +1,6 @@
 
 import axios, * as others from 'axios';
+let userData = []
 export function Login(){
     // login form
     const div = document.createElement('div');
@@ -16,6 +17,7 @@ export function Login(){
         <form id="reg-form">
             <input type="text" id="email-login" placeholder="Podaj swój adres e-mail">
             <input type="password" id="password-login" placeholder="Podaj hasło">
+            <div><span id="veri-text-login"></span></div>
             <a href="#">Zapomniałeś hasła?</a>
             <input type="submit" id="btn-login" class="button" value="Zaloguj się">
         </form>
@@ -36,6 +38,7 @@ export function Login(){
             <input id="email-reg" type="text" placeholder="Podaj swój adres e-mail">
             <input id="password-reg" type="password" placeholder="Podaj hasło">
             <input id="password-reg-r" type="password" placeholder="Wpisz ponownie hasło">
+            <span id="veri-text"></span>
             <input type="button" id="btn-reg" class="button" value="Zarejestruj się">
         </form>
         <div class="signup">
@@ -50,111 +53,124 @@ export function Login(){
 
         /// rejestracja
         const userEmail =  divReg.querySelector("#email-reg");
-        const userPasswod = divReg.querySelector("#password-reg");
-        const userRepeatPasswod = divReg.querySelector("#password-reg-r");
+        const userPassword = divReg.querySelector("#password-reg");
+        const userRepeatPassword = divReg.querySelector("#password-reg-r");
+        const validation = divReg.querySelector("#veri-text");
         const btnReg = divReg.querySelector("#btn-reg");
-        console.log(userEmail, userPasswod,userRepeatPasswod,btnReg);
+        console.log(userEmail, userPassword,userRepeatPassword,btnReg);
         let userId = 0;
         
+        //logowanie
         const userLoginEmail =  divLog.querySelector("#email-login");
-        const userLoginPasswod = divLog.querySelector("#password-login");
+        const userLoginPassword = divLog.querySelector("#password-login");
+        const validationLogin = divLog.querySelector("#veri-text-login");
         const btnLogin = divLog.querySelector("#btn-login");
-        console.log(userLoginEmail, userLoginPasswod, btnLogin);
+        console.log(userLoginEmail, userLoginPassword, btnLogin);
         
 
         //pobieranie danych
         axios.get('http://localhost:3000/users')
             .then(resp => {
                 data = resp.data;
-                console.log('data', data)
-                data.forEach(e => {
-                    console.log(` ${e.id}, ${e.email}, ${e.password}`);
-                    userId = e.id;
-                });
+                userId = data[data.length-1].id
+                userData = data.map((emialAddress) => emialAddress.email); // same adresy email
                 //logowanie
                 btnLogin.addEventListener('click', (e) =>{
                     e.preventDefault();
                     console.log('click login');
                     let loginOk = false;
-                    if((userLoginEmail.value.length > 0) && ((userLoginPasswod.value.length > 0))){
+                    validationLogin.style.color ='red';
+                    if((userLoginEmail.value.length > 0) && ((userLoginPassword.value.length > 0))){
                         data.forEach(e => {
-                            if((userLoginEmail.value === e.email) && (userLoginPasswod.value === e.password)){
+                            if((userLoginEmail.value === e.email) && (userLoginPassword.value === e.password)){ // sprawdzenia email i hasła
                                 loginOk = true;
                             }
                         });
                         if (loginOk){
-                            alert('Zostałeś pomyślnie zalogowany');
-                            /// przejdź do strony głownej
+                            validationLogin.style.color ='green';
+                            validationLogin.innerHTML = 'Zostałeś pomyślnie zalogowany';
+                            location.href = "http://localhost:1234";
                         }
                         else{
-                            alert('Niepoprawny e-mail lub hasło');
+                            
+                            validationLogin.innerHTML = 'Niepoprawny e-mail lub hasło';
                         }
                     }
                     else{
-                        alert('Uzupełnij wszytskie pola')
+                        validationLogin.innerHTML = 'Uzupełnij wszytskie pola';
+                        
                     }
-                    
-                    
                 })
             })
             .catch(error => {
                 console.log(error);
             });
         
-        //console.log('userData', usersData);
-        
-        // btnLogin.addEventListener('click', (e) =>{
-        //     e.preventDefault();
-        //     console.log('click login');
-        //     if((userLoginEmail.value.length > 0) && ((userLoginPasswod.value.length > 0))){
-        //         data.forEach(e => {
-        //             if((userLoginEmail.value === e.email) && (userLoginPasswod.value === e.password)){
-        //                 alert('Zostałeś pomyślnie zalogowany');
-        //                 /// przejdź do strony głownej
-        //             }
-        //         });
-        //     }
-        //     else{
-        //         alert('Uzupełnij wszytskie pola')
-        //     }
-            
-            
-        // })
-        
-    
+        /// walidacja : hasło dłuższe między 4 - 10 znaków, musi zawierać jedną cyfrę, jedną wielką i małą literę, muszą być takie same   
+        function CheckPassword(inputTxt) { 
+            console.log('inputTxt', inputTxt)
+            const passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,10}$/;
+            if(inputTxt.match(passw)) { 
+                if (userRepeatPassword.value === userPassword.value){
+                    return true;
+                }
+                else{
+                    validation.style.color ='red';
+                    validation.innerHTML = "Hasła nie są takie same"
+                    return false; 
+                }
+            }
+            else{ 
+                validation.style.color ='red';
+                validation.innerHTML = "Hasło musi zawierać od 4-10 znaków, jedną cyfrę i jedną wielką literę!"
+                return false;
+            }
+        }
+
+
         /// rejestracja zapisywanie danych do database.json
         btnReg.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('click registration')
-        /// sprawdzenie, czy juz taki adres email jest w pliku
-        data.forEach(e => {
-            if(userLoginEmail.value === e.email){
-                alert('Podany adres email już istnieje')
-            }
-        });
-        if((userEmail.value.length > 0) 
-        && (userPasswod.value.length > 0) 
-        && (userRepeatPasswod.value.length > 0) 
-        && (userRepeatPasswod.value === userPasswod.value)
-        &&(usersData.includes("Mango"))){
-            axios.post('http://localhost:3000/users', {
-                id: userId + 1,
-                email: userEmail.value,
-                password: userPasswod.value,
-            }).then(resp => {
-            console.log(resp.data);
-            }).catch(error => {
-            console.log(error);
-            });
-
-        }
-        else{
-            alert('Uzupełnij wszytskie pola')
-        }
+            //console.log('click registration')
+            //console.log('userData', userData);
+            let passwordOk =  true;
         
-        })
+            validation.style.color ='red';
+            
+            if(!userEmail.value.length > 0){ 
+                validation.innerHTML = "Wpisz adres e-mail";
+                passwordOk = false;
+            }
+            if(!CheckPassword(userPassword.value)){
+                passwordOk = false;
+            }
+            if(CheckPassword(userRepeatPassword.value)){
+                passwordOk = false;
+            }
+            userData.forEach(e => {
+                if(userEmail.value === e){
+                    validation.innerHTML = "Podany adres email już istnieje";
+                    passwordOk = false;
+                }
+            });
+            console.log(passwordOk);
+            
+            if(passwordOk){
+                axios.post('http://localhost:3000/users', {
+                    id: userId + 1,
+                    email: userEmail.value,
+                    password: userPassword.value,
+                }).then(resp => {
+                    console.log(resp.data);
+                }).catch(error => {
+                    console.log(error);
+                });
+                validation.style.color ='green';
+                validation.innerHTML = "Poprawnie dodany użytkownik";
+                ///location.href = "http://localhost:1234";
 
-    
+        }
+    })
 
 return div;
 }
