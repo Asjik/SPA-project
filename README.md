@@ -35,8 +35,6 @@ List the ready features here:
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
 
 `npm start:app`
 

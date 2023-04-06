@@ -43,37 +43,40 @@ main{
 }
 
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: #212529;
-}
-#mainNav .navbar-toggler {
-  padding: 0.75rem;
-  font-size: 0.75rem;
-  //font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-#mainNav .navbar-brand {
-  color: #009579;//#ffc800;
-  //font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  text-transform: uppercase;
-}
-#mainNav .navbar-brand img {
-  height: 2rem;
-}
-#mainNav .navbar-nav .nav-item .nav-link {
-  //font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.95rem;
-  color: #fff;
-  letter-spacing: 0.0625em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
+
+  .navbar-toggler {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    //font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .navbar-brand {
+    color: #009579;//#ffc800;
+    //font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+  }
+  .navbar-brand img {
+    height: 2rem;
+  }
+  .navbar-nav .nav-item .nav-link {
+    //font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    color: #fff;
+    letter-spacing: 0.0625em;
+  }
+  
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color:#009579;// #ffc800;
   border-bottom: 3px solid #009579;
 }
+
 
 
 // HEADER
@@ -87,21 +90,30 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-}
 
-header.masthead .masthead-subheading {
-  font-size: 1.5rem;
-  font-style: italic;
-  line-height: 1.5rem;
-  margin-bottom: 25px;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-header.masthead .masthead-heading {
-  font-size: 3.25rem;
-  font-weight: 700;
-  line-height: 3.25rem;
-  margin-bottom: 2rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  .masthead-subheading {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-bottom: 25px;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  .masthead-heading {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  ///Date inputs
+  #date-from, #date-to{
+    background-color: #009579;//#ffc800;
+    color: white;
+    height: 35px;
+    border: 1px solid #009579;
+    vertical-align: middle;
+    border-radius: 4px;
+  }
 }
 
 .btn-primary {
@@ -117,21 +129,9 @@ header.masthead .masthead-heading {
   border: 1px solid #009579;
 }
 
-///Date inputs
-#date-from, #date-to{
-  background-color: #009579;//#ffc800;
-  color: white;
-  height: 35px;
-  border: 1px solid #009579;
-  vertical-align: middle;
-  border-radius: 4px;
-}
+
 
 ////ABOUT US HOME
-
-// .page-section {
-//   padding: 1rem 0;
-// }
 .page-section h2.section-heading, 
 .page-section .section-heading.h2 {
   font-size: 2.5rem;
@@ -158,50 +158,103 @@ header.masthead .masthead-heading {
 .room-opinion {
   margin-bottom: 3rem;
   text-align: center;
-}
-.room-opinion img {
-  width: 14rem;
-  height: 14rem;
-  border: 0.5rem solid rgba(0, 0, 0, 0.1);
-}
-.room-opinion h4, .room-opinion .h4 {
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-}
 
-.checked {
-  color: orange;
-}
+  img {
+    width: 14rem;
+    height: 14rem;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+  h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
 
-.fa{
-  height: 100px;
-  width: 100px;
+  .checked {
+    color: orange;
+  }
+
+  .fa{
+    height: 100px;
+    width: 100px;
+  }
 }
 
 
 /// ROOMS PAGE
-
 .room-list {
-  list-style: none;
-  padding   : 0;
-  position: relative;
-  background-color: transparent;
+    list-style: none;
+    padding   : 0;
+    position: relative;
+    background-color: transparent;
+
+    li {
+      position: relative;
+      min-height: 50px;
+      margin-bottom: 80px;
+      box-shadow: 0 1px 20px 0 rgba(0,0,0,.2);
+    }
+
+    .room-card{
+      display: block;
+  
+      .room-card__bg {
+        width:100%;
+
+        .room-pic__img{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+      }
+
+      .room-card__footer{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 140px;
+        padding: 27px 40px;
+        background-color: #fff;
+
+        span{
+          display: flex;
+          align-items: baseline;
+          position: relative;
+          width: 150px;
+          padding-top: 10px;
+          color: #000;
+          font-size: 16px;
+          letter-spacing: 1.6px;
+
+          strong{
+            margin-left: 5px; 
+          }
+        }
+
+        .room-card__content{
+          padding-top: 3px;
+          padding-left: 5px;
+        }
+        .room-card__content h4{ 
+          color: #000;
+          font-size: 25px;
+          font-weight: 500;
+          letter-spacing: .5px;
+          line-height: 1.08;
+        }
+    
+        .btn{
+          margin-left: 20px;
+          border: 1px solid black;
+        }
+      }
+  }
 }
 
-.room-list > li {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 80px;
-  box-shadow: 0 1px 20px 0 rgba(0,0,0,.2);
-}
-
-.room-card{
-  display: block;
-}
-
-.room-card__bg {
-  width:100%;
-}
+//ogolne
 .room-pic__img{
   display: flex;
   align-items: center;
@@ -210,48 +263,6 @@ header.masthead .masthead-heading {
   height: 100%;
   overflow: hidden;
 }
-
-.room-card__footer{
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 140px;
-  padding: 27px 40px;
-  background-color: #fff;
-}
-.room-card__footer span{
-  display: flex;
-  align-items: baseline;
-  position: relative;
-  width: 150px;
-  padding-top: 10px;
-  color: #000;
-  font-size: 16px;
-  letter-spacing: 1.6px;
-}
-.room-card__footer span strong{
-  margin-left: 5px; 
-}
-
-.room-card__content{
-  padding-top: 3px;
-  padding-left: 5px;
-}
-.room-card__content h4{ 
-  color: #000;
-  font-size: 25px;
-  font-weight: 500;
-  letter-spacing: .5px;
-  line-height: 1.08;
-}
-
-.room-card__footer .btn{
-  margin-left: 20px;
-  border: 1px solid black;
-
-}
-
 
 //// ROOM DETAILED PAGE
 #single-room{
@@ -353,70 +364,74 @@ header.masthead .masthead-heading {
   padding   : 0;
   position: relative;
   background-color: transparent;
-}
 
-.treatment-list > li {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 80px;
-  box-shadow: 0 1px 20px 0 rgba(0,0,0,.2);
-}
 
-.treatment-card__bg {
-  width:100%;
-}
-.treatment-pic__img{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+  > li {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 80px;
+    box-shadow: 0 1px 20px 0 rgba(0,0,0,.2);
+  }
 
-.treatment-card__footer{
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 140px;
-  padding: 27px 40px;
-  background-color: #fff;
-}
-.treatment-card__footer span{
-  display: flex;
-  align-items: baseline;
-  position: relative;
-  width: 150px;
-  padding-top: 20px;
-  color: #000;
-  font-size: 16px;
-  letter-spacing: 1.6px;
-}
+  .treatment-card__bg {
+    width:100%;
 
-.treatment-card__footer span strong{
-  margin-left: 5px; 
-}
+    .treatment-pic__img{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
 
-.treatment-card__content{
-  padding-top: 3px;
-  padding-left: 15px;
-}
-.treatment-card__content h4{ 
-  color: #000;
-  font-size: 25px;
-  font-weight: 500;
-  letter-spacing: .5px;
-  line-height: 1.08;
-}
 
-.treatment-card__footer .btn{
-  margin-left: 20px;
-  border: 1px solid black;
+  .treatment-card__footer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 140px;
+    padding: 27px 40px;
+    background-color: #fff;
+
+    span{
+      display: flex;
+      align-items: baseline;
+      position: relative;
+      width: 150px;
+      padding-top: 20px;
+      color: #000;
+      font-size: 16px;
+      letter-spacing: 1.6px;
+
+      strong{
+        margin-left: 5px; 
+      }
+    }
+
+    .treatment-card__content{
+      padding-top: 3px;
+      padding-left: 15px;
+      h4{ 
+        color: #000;
+        font-size: 25px;
+        font-weight: 500;
+        letter-spacing: .5px;
+        line-height: 1.08;
+      }
+    }
+
+    .btn{
+      margin-left: 20px;
+      border: 1px solid black;
+    }
+    
+  }
 }
 
 ///TREATMENTS DETAILED PAGE
-
 
 .card {
   display: flex;
@@ -428,52 +443,44 @@ header.masthead .masthead-heading {
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   align-items: center;
-  justify-content: center
+  justify-content: center;
+
+
+  .card-pic-wrap {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px 0 0 5px;
+    background: linear-gradient(to bottom, #9fd483, #8dc26f);
+
+    img {
+      max-width: 100%;
+      bottom: 3em;
+      -webkit-box-reflect: below -1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(250, 250, 250, 0.15)));
+    }
+  }
+  
+  .card-content {
+    padding: 3em 4em 2em;
+    flex: 2;
+    h3 {
+      font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-weight: bold;
+      font-size: 2.5em;
+      margin: 0 0 .75em;
+    }
+    p{
+      font-size: 1.25em;
+    }
+    .btn{
+      position: absolute;
+      right: 100px;
+      bottom: 85px;
+      border: 2px solid black;
+    }
+
+  }
 }
-
-.card-pic-wrap {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  border-radius: 5px 0 0 5px;
-  //width: 300px;
-  //position: relative;
-  background: linear-gradient(to bottom, #9fd483, #8dc26f);
-
-}
-.card-pic-wrap img {
-  max-width: 100%;
-  bottom: 3em;
-  //left: 50%;
-  //margin-left: -175px;
-  //width: 350px;
-  -webkit-box-reflect: below -1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(250, 250, 250, 0.15)));
-}
-
-.card-content {
-  padding: 3em 4em 2em;
-  flex: 2;
-}
-
-
-.card-content h3 {
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: bold;
-  font-size: 2.5em;
-  margin: 0 0 .75em;
-}
-
-.card-content p{
-  font-size: 1.25em;
-}
-
-.card-content .btn{
-  position: absolute;
-  right: 100px;
-  bottom: 85px;
-  border: 2px solid black;
-}
-
 
 
 
@@ -487,8 +494,8 @@ header.masthead .masthead-heading {
   margin-top: auto;
 }
 
-//// CART
 
+//// CART
 .tableHead {
   display: table;
   width: 100%;
