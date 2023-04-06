@@ -72,25 +72,8 @@ main{
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color:#009579;// #ffc800;
+  border-bottom: 3px solid #009579;
 }
-#mainNav .navbar-nav .nav-item .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 50%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  background-color: #009579;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-#mainNav .navbar-nav .nav-item .nav-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
 
 
 // HEADER
@@ -529,15 +512,16 @@ header.masthead .masthead-heading {
   margin-bottom: 5em;
   .basket-icon{
     font-size: 3.5em;
-    left: 50%;
-
-    position: relative;
-    transform: translate(-0%, -50%);
+  }
+  .empty-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .emptySection{
+    margin-top: 1.5em;
     font-size: 1.5em;
-    text-align: center;
-
   }
   .items {
     display: block;

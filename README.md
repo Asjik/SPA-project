@@ -1,70 +1,46 @@
 # IT SPA
 
-Projekt polega na napisaniu aplikacji Single Page Application dla ośrodka SPA dedykowanego programistom.
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Usage](#usage)
+* [Project Status](#project-status)
 
-Aplikacja powinna umożliwiać: 
 
-- Przeglądanie dostępnych zabiegów
-- Dodawanie wybranych zabiegów do koszyka
-- Wybór daty przyjazdu i wyjazdu oraz pokoju  
-- Rejestrację użytkownika (opcjonalnie)
-- Logowanie użytkownika (opcjonalnie)
-- Podsumowanie składanego zamówienia
+## General Information
+Project of a Single Page Application for a dedicated SPA center
+programmers.
 
-## Booking
 
-Stwórz komponent koszyka, który wyświetla podsumowanie zamówienia.
-Koszyk powinien też umożliwiać nanoszenie poprawek do zamówienia.
-Użytkownik nie może wybrać daty przyjazdu wcześniejszej niż bieżąca.
-Wybrana data wyjazdu nie może być dalsza niż rok od daty przyjazdu.
-
-## Rejestracja
-
-Stwórz komponent rejestracji użytkownika z opcjonalnym miernikiem siły hasła.
-Rejestracja polega na zapisaniu danych użytkownika (e-mail i hasła) w pliku `database.json`.
-Nie powinna być możliwa rejestracja użytkownika o identycznym adresie e-mail.
-
-## Logowanie
-
-Stwórz komponent logowania użytkownika, który opcjonalnie będzie wyświetlał avatar użytkownika.
-Logowanie polega na porównaniu podanych przez użytkownika danych (e-mail i hasła) z tymi w pliku `database.json`.
-
-## Pokoje
-
-Bazę przykładowych pokoi w ośrodku IT SPA znajdziesz w pliku `database.json`.
-Możesz dowolnie zmienić istniejące pokoje lub dodać swoje własne. 
-
-## Zabiegi 
-
-Bazę przykładowych zabiegów ośrodka IT SPA znajdziesz w pliku `database.json`.
-Możesz dowolnie zmienić istniejące zabiegi lub dodać swoje własne. 
-
-## Koszyk
-
-Stwórz komponent koszyka, który po najechaniu myszką będzie wyświetlał dodane pokoje i zabiegi.
-Koszyk musi przetrwać przeładowanie strony, dlatego spróbuj wykorzystać ciasteczka (Cookies).
-
-## Technologie
-
+## Technologies Used
 - HTML, Bootstrap
-- CSS, Sass, LESS
-- JavaScript, jQuery
+- CSS, SCSS
+- JavaScript
 - Node, Express
 
-Postaraj się korzystać z ECMAScript 6.
 
-Do interakcji z serwerem bazy danych wykorzystaj `fetch`.
-Jeśli lubisz eksperymenty, zainstaluj pakiet `axios`.
+## Features
+List the ready features here:
+- Browse available treatments
+- Adding selected treatments to the cart
+- Selection of arrival and departure date and room
+- User login
+- User registration
+- Summary of your order
 
-## Ocena
+## Screenshots
+![Example screenshot](./img/screenshot.png)
+<!-- If you have screenshots you'd like to share, include them here. -->
 
-Zamieść gotowy projekt na swoim GitHubie, a następnie prześlij link do prowadzącego.
+## Usage
+How does one go about using it?
+Provide various use cases and code examples here.
 
-## Przykłady
+`npm start:app`
 
-Strony, którymi możesz się inspirować: 
 
-- afrodyta-spa.pl
-- bukowypark.pl
-- hotelczarnypotok.pl
-- hotelniemcza.pl
+## Project Status
+Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+
