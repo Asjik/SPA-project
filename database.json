@@ -69,6 +69,20 @@
       "surname": "Kowalski",
       "email": "foren65-1993@o2.pl",
       "password": "1234Aa"
+    },
+    {
+      "id": 11,
+      "name": "Barbara",
+      "surname": "Sosna",
+      "email": "barbarasosna@o2.pl",
+      "password": "Assss4"
+    },
+    {
+      "id": 12,
+      "name": "Anna",
+      "surname": "Nowak",
+      "email": "annanowak@o2.pl",
+      "password": "Zxxxx4"
     }
   ],
   "rooms": [

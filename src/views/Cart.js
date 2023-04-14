@@ -23,7 +23,7 @@
             
             <p> <input type="text"  class="qty" placeholder="${item.quantity}"/> x ${item.price}</p>
             
-            <p class="stockStatus"> In Stock</p>
+            
         </div>  
         <div class="prodTotal cartSection">
             <p>${item.price * item.quantity}</p>

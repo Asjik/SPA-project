@@ -12,6 +12,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.3",
+    "buffer": "^5.7.1",
     "json-server": "^0.15.1",
     "parcel": "^2.8.3",
     "sass": "^1.49.0"

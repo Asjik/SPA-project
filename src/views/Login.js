@@ -100,11 +100,12 @@ export function Login(){
                         });
                         if (loginOk){
                             validationLogin.style.color ='green';
-                            //validationLogin.innerHTML = 'Zostałeś pomyślnie zalogowany';
                             popup.innerHTML=`Zostałeś pomyślnie zalogowany ${name} ${surname}`;
                             popup.classList.toggle("show");
-
-                            //location.href = "http://localhost:1234";
+                            setTimeout(function(){ 
+                                location.href = "http://localhost:1234";
+                            }, 2000);
+                            
                         }
                         else{
                             
@@ -131,7 +132,9 @@ export function Login(){
                 }
                 else{
                     validation.style.color ='red';
-                    validation.innerHTML = "Hasła nie są takie same"
+                    validation.innerHTML = "Hasła nie są takie same";
+                    console.log(userRepeatPassword.value);
+                    console.log(userPassword.value);
                     return false; 
                 }
             }
@@ -160,13 +163,16 @@ export function Login(){
                 passwordOk = false;
             }
             if(!CheckPassword(userPassword.value)){
+                console.log('userPassword.valueuser',userPassword.value);
                 passwordOk = false;
             }
-            if(CheckPassword(userRepeatPassword.value)){
+            if(!CheckPassword(userRepeatPassword.value)){
+                console.log('userRepeatPassword.value',userRepeatPassword.value);
                 passwordOk = false;
             }
             userData.forEach(e => {
                 if(userEmail.value === e){
+                    console.log('(userEmail.value', userEmail.value);
                     validation.innerHTML = "Podany adres email już istnieje";
                     passwordOk = false;
                 }
@@ -187,7 +193,9 @@ export function Login(){
                 });
                 validation.style.color ='green';
                 validation.innerHTML = "Poprawnie dodany użytkownik";
-                ///location.href = "http://localhost:1234";
+                setTimeout(function(){ 
+                    location.href = "http://localhost:1234";
+                }, 2000);
 
         }
     })
