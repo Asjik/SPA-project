@@ -13,11 +13,10 @@ export function NavElement(navItems){
         li.innerHTML = `
             <a href="#${item.name}" class="nav-link">${item.name}</a>
         `;
-        li.addEventListener('click', () => {
+        li.addEventListener('click', (e) => {
             const navigationEvent = new CustomEvent('navigate', {
                 detail: item.component
             });
-        
             document.body.dispatchEvent(navigationEvent);
         });
 
@@ -29,4 +28,3 @@ export function NavElement(navItems){
     div.append(ul)
     return div
 }
-

@@ -13,12 +13,15 @@ export function Login(){
     divLog.setAttribute('class', 'login form');
 
     divLog.innerHTML=`
-        <header>Zaloguj się</header>
+        <header>Formularz kontaktowy</header>
         <form id="reg-form">
             <input type="text" id="email-login" placeholder="Podaj swój adres e-mail">
             <input type="password" id="password-login" placeholder="Podaj hasło">
             <div><span id="veri-text-login"></span></div>
             <a href="#">Zapomniałeś hasła?</a>
+            <div class="popup">
+                <span class="popuptext" id="myPopup">A Simple Popup!</span>
+            </div>
             <input type="submit" id="btn-login" class="button" value="Zaloguj się">
         </form>
         <div class="signup">
@@ -35,8 +38,10 @@ export function Login(){
     divReg.innerHTML=`
     <header>Zarejestruj się</header>
         <form id="register_form">
-            <input id="email-reg" type="text" placeholder="Podaj swój adres e-mail">
-            <input id="password-reg" type="password" placeholder="Podaj hasło">
+            <input id="name-reg" type="text" placeholder="Imię">
+            <input id="surname-reg" type="text" placeholder="Nazwisko">
+            <input id="email-reg" type="text" placeholder="Adres e-mail">
+            <input id="password-reg" type="password" placeholder="Hasło">
             <input id="password-reg-r" type="password" placeholder="Wpisz ponownie hasło">
             <span id="veri-text"></span>
             <input type="button" id="btn-reg" class="button" value="Zarejestruj się">
@@ -54,6 +59,8 @@ export function Login(){
         /// rejestracja
         const userEmail =  divReg.querySelector("#email-reg");
         const userPassword = divReg.querySelector("#password-reg");
+        const userName =  divReg.querySelector("#name-reg");
+        const userSurname = divReg.querySelector("#surname-reg");
         const userRepeatPassword = divReg.querySelector("#password-reg-r");
         const validation = divReg.querySelector("#veri-text");
         const btnReg = divReg.querySelector("#btn-reg");
@@ -65,6 +72,7 @@ export function Login(){
         const userLoginPassword = divLog.querySelector("#password-login");
         const validationLogin = divLog.querySelector("#veri-text-login");
         const btnLogin = divLog.querySelector("#btn-login");
+        const popup = divLog.querySelector("#myPopup");
         console.log(userLoginEmail, userLoginPassword, btnLogin);
         
 
@@ -79,17 +87,24 @@ export function Login(){
                     e.preventDefault();
                     console.log('click login');
                     let loginOk = false;
+                    let name = '';
+                    let surname = ''
                     validationLogin.style.color ='red';
                     if((userLoginEmail.value.length > 0) && ((userLoginPassword.value.length > 0))){
                         data.forEach(e => {
                             if((userLoginEmail.value === e.email) && (userLoginPassword.value === e.password)){ // sprawdzenia email i hasła
                                 loginOk = true;
+                                name = e.name;
+                                surname = e.surname;
                             }
                         });
                         if (loginOk){
                             validationLogin.style.color ='green';
-                            validationLogin.innerHTML = 'Zostałeś pomyślnie zalogowany';
-                            location.href = "http://localhost:1234";
+                            //validationLogin.innerHTML = 'Zostałeś pomyślnie zalogowany';
+                            popup.innerHTML=`Zostałeś pomyślnie zalogowany ${name} ${surname}`;
+                            popup.classList.toggle("show");
+
+                            //location.href = "http://localhost:1234";
                         }
                         else{
                             
@@ -136,9 +151,12 @@ export function Login(){
             let passwordOk =  true;
         
             validation.style.color ='red';
-            
+            if((!userName.value.length > 0) && (!userSurname.value.length > 0)){ 
+                validation.innerHTML = "Uzupełnij imię i nazwisko";
+                passwordOk = false;
+            }
             if(!userEmail.value.length > 0){ 
-                validation.innerHTML = "Wpisz adres e-mail";
+                validation.innerHTML = "Uzupełnij adres e-mail";
                 passwordOk = false;
             }
             if(!CheckPassword(userPassword.value)){
@@ -158,6 +176,8 @@ export function Login(){
             if(passwordOk){
                 axios.post('http://localhost:3000/users', {
                     id: userId + 1,
+                    name: userName.value,
+                    surname: userSurname.value,
                     email: userEmail.value,
                     password: userPassword.value,
                 }).then(resp => {

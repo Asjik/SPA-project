@@ -13,7 +13,7 @@ export const navItems = [
     { name: 'Apartamenty', component: RoomList },
     { name: 'Zabiegi', component: TreatmentList },
     { name: 'Koszyk', component: Cart },
-    { name: 'Logowanie', component: Login }
+    { name: 'Kontakt', component: Login }
 ];
 
 export function Nav() {

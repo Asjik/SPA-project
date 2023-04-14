@@ -2,51 +2,71 @@
   "users": [
     {
       "id": 1,
+      "name": "Rob",
+      "surname": "Smith",
       "email": "rob23@gmail.com",
       "password": "aaa"
     },
     {
       "id": 2,
+      "name": "Lucky",
+      "surname": "Luke",
       "email": "lucyb56@gmail.com",
       "password": "aaa"
     },
     {
       "id": 3,
+      "name": "Anna",
+      "surname": "Smith",
       "email": "annasmith23@gmail.com",
       "password": "aaa"
     },
     {
-      "id": 6,
+      "id": 4,
+      "name": "Freddy",
+      "surname": "Mercury",
       "email": "freddyb34@gmail.com",
+      "password": "aaa"
+    },
+    {
+      "id": 5,
+      "name": "Jan",
+      "surname": "Kowalski",
+      "email": "freddyb78@gmail.com",
+      "password": "aaa"
+    },
+    {
+      "id": 6,
+      "name": "Fiona",
+      "surname": "May",
+      "email": "fhggf@o2.pl",
       "password": "aaa"
     },
     {
       "id": 7,
-      "email": "freddyb34@gmail.com",
+      "name": "Robert",
+      "surname": "Nico",
+      "email": "robetrn@o2.pl",
       "password": "aaa"
     },
     {
       "id": 8,
-      "email": "fhggf@o2.pl",
-      "password": "aaa"
-    },
-    {
-      "id": 9,
-      "email": "fhggf@o2.pl",
-      "password": "aaa"
-    },
-    {
-      "id": 10,
+      "name": "Anna",
+      "surname": "Kowalska",
       "email": "annakowalska@o2.pl",
       "password": "annakowalska"
     },
     {
-      "id": 11,
+      "id": 9,
+      "name": "Forest",
+      "surname": "Gump",
       "email": "forsaken65-1993@o2.pl",
       "password": "asia"
     },
     {
-      "id": 12,
+      "id": 10,
+      "name": "Jan",
+      "surname": "Kowalski",
       "email": "foren65-1993@o2.pl",
       "password": "1234Aa"
     }
@@ -128,7 +148,7 @@
       "area": "hands",
       "time": 45,
       "price": 150,
-      "photo": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "photo": "https://images.unsplash.com/photo-1523459178261-028135da2714?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1166&q=80"
     },
     {
       "id": 6,
@@ -136,7 +156,7 @@
       "area": "body",
       "time": 60,
       "price": 200,
-      "photo": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "photo": "https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
     },
     {
       "id": 7,
@@ -144,7 +164,7 @@
       "area": "body",
       "time": 45,
       "price": 120,
-      "photo": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "photo": "https://images.unsplash.com/photo-1526758097130-bab247274f58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
     }
   ]
 }

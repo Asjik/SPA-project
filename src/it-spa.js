@@ -87,53 +87,20 @@ const btn = document.getElementById('reservation');
 //reagujemy na zdarzenie `navigate`
 document.body.addEventListener('navigate', event => {
     const Component = event.detail;
-
   // wstawiamy nowy "widok" do elementu `main`
     main.innerHTML = '';
     main.append(Component());
 });
 
+let navMain = document.querySelector(".navbar-collapse");
+navMain.addEventListener("click", myFunction);
 
-// window.addEventListener('DOMContentLoaded', event => {
 
-//   // Navbar shrink function
-//   var navbarShrink = function () {
-//       const navbarCollapsible = document.body.querySelector('#mainNav');
-//       if (!navbarCollapsible) {
-//           return;
-//       }
-//       if (window.scrollY === 0) {
-//           navbarCollapsible.classList.remove('navbar-shrink')
-//       } else {
-//           navbarCollapsible.classList.add('navbar-shrink')
-//       }
+function myFunction (){
+    console.log('navMain', navMain.style.display);
+    navMain.setAttribute('class', 'navbar-collapse collapse')
+}
 
-//   };
-//   /// CHECK Date
-    
-    
 
-//   // Shrink the navbar 
-//   navbarShrink();
-
-//   // Shrink the navbar when page is scrolled
-//   document.addEventListener('scroll', navbarShrink);
-
-//   // Collapse responsive navbar when toggler is visible
-//   const navbarToggler = document.body.querySelector('.navbar-toggler');
-//   //console.log(navbarToggler)
-//   const responsiveNavItems = [].slice.call(
-//       document.querySelectorAll('#navbarResponsive .nav-link')
-//   );
-//   //console.log(responsiveNavItems)
-//   responsiveNavItems.map(function (responsiveNavItem) {
-//       responsiveNavItem.addEventListener('click', () => {
-//           if (window.getComputedStyle(navbarToggler).display !== 'none') {
-//               navbarToggler.click();
-//           }
-//       });
-//   });
-
-// });
 
 
